@@ -16,6 +16,11 @@ gem 'bcrypt', 							'3.1.7'
 
 # Use carrierwave for file uploading
 gem 'carrierwave',					'0.10.0'
+# Use Amazon S3 for saving uploaded files
+gem "fog"
+# Use figaro to manage sensitive configuration information
+# like Amazon S3 access key and pass
+gem "figaro"
 
 group :development, :test do
   gem 'sqlite3',     				'1.3.9'
