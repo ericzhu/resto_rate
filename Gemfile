@@ -21,6 +21,8 @@ gem "fog"
 # Use figaro to manage sensitive configuration information
 # like Amazon S3 access key and pass
 gem "figaro"
+# Used to resize uploaded image
+gem "mini_magick",					'4.1.0'
 
 group :development, :test do
   gem 'sqlite3',     				'1.3.9'
