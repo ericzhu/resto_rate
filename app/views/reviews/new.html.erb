@@ -1,5 +1,30 @@
 <h1>New Review</h1>
 
+<div class="well">
+	 <%= image_tag @restaurant.image_url %>
+
+	<p>
+	  <strong>Name:</strong>
+	  <%= @restaurant.name %>
+	</p>
+
+	<p>
+	  <strong>Address:</strong>
+	  <%= @restaurant.address %>
+	</p>
+
+	<p>
+	  <strong>Phone:</strong>
+	  <%= @restaurant.phone %>
+	</p>
+
+	<p>
+	  <strong>Website:</strong>
+	  <%= @restaurant.website %>
+	</p>
+	
+</div>
+
 <%= render 'form' %>
 
-<%= link_to 'Back', reviews_path %>
+<%= link_to 'Back', '#' %>

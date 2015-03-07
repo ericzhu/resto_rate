@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   
-  resources :reviews, except: [:show, :index]
+  resources :restaurants do 
+
+    # Nested resource, reviews is a resource nested in the Restaurant
+    resources :reviews, except: [:show, :index]
+  end
 
   devise_for :users
   
   root 'restaurants#index'
 
-  resources :restaurants
+  
 
   get 'pages/about'
 
