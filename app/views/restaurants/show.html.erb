@@ -1,26 +1,37 @@
-<p id="notice"><%= notice %></p>
-
- <%= image_tag @restaurant.image_url %>
-
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @restaurant.phone %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @restaurant.website %>
-</p>
-
-<%= link_to 'Edit', edit_restaurant_path(@restaurant), class:'btn btn-link' %> |
-<%= link_to 'Back', restaurants_path, class:'btn btn-link' %>
+<div class="row">
+	<div class="col-md-3">
+		<%= image_tag @restaurant.image_url %>
+		<p>
+			<h3>
+				<%= @restaurant.name %>
+			</h3>
+		</p>
+		<p>
+		  <strong>Address:</strong>
+		  <%= @restaurant.address %>
+		</p>
+		<p>
+		  <strong>Phone:</strong>
+		  <%= @restaurant.phone %>
+		</p>
+		<p>
+		  <strong>Website:</strong>
+		  <%= link_to @restaurant.website, @restaurant.website %>
+		</p>
+		<p>
+			<%= link_to 'Write a review', new_restaurant_review_path(@restaurant), class:'btn btn-primary' %>
+		</p>
+		<P>
+			<%= link_to 'Edit', edit_restaurant_path(@restaurant), class:'btn btn-link' %> |
+			<%= link_to 'Back', restaurants_path, class:'btn btn-link' %>
+		</P>
+		
+	</div>
+	<div class="col-md-9">
+		<% @reviews.each do |review| %>
+			<%= review.rating %>
+			<%= review.comment %>
+			<br>
+		<% end %>
+	</div>
+</div>
