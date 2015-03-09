@@ -26,6 +26,8 @@ gem "mini_magick",					'4.1.0'
 
 gem 'devise'
 
+gem 'searchkick'
+
 group :development, :test do
   gem 'sqlite3',     				'1.3.9'
   gem 'byebug',      				'3.4.0'

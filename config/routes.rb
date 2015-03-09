@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
   resources :restaurants do 
+    collection do
+      get 'search'
+    end
 
     # Nested resource, reviews is a resource nested in the Restaurant
     resources :reviews, except: [:show, :index]
